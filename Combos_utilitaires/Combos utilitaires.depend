@@ -338,13 +338,13 @@
 	<string>
 	<vector>
 
-1392550971 source:d:\programmation\c++\gui\combos_utilitaires\main.cpp
+1392574429 source:d:\programmation\c++\gui\combos_utilitaires\main.cpp
 	<iostream>
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
-	"System.h"
-	"Button.h"
+	"System/System.h"
+	"System/Button.h"
 	"main.h"
 
 1392550952 d:\programmation\c++\gui\combos_utilitaires\system.h
@@ -372,4 +372,17 @@
 1392411171 d:\programmation\c++\gui\combos_utilitaires\inputtext.h
 
 1392487919 d:\programmation\c++\gui\combos_utilitaires\main.h
+
+1392574276 d:\programmation\c++\gui\combos_utilitaires\system\system.h
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+	<iostream>
+	"../main.h"
+
+1392574443 d:\programmation\c++\gui\combos_utilitaires\system\button.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	<string>
+	"../main.h"
 

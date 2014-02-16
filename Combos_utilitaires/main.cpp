@@ -3,13 +3,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 
-#include "System.h"
-#include "Button.h"
+#include "System/System.h"
+#include "System/Button.h"
 #include "main.h"
 
 int main() {
     std::cout << "Your OS is " << getOsName() << std::endl;
-    System gameSystem;
+    System system;
 
     sf::VideoMode clientVideoMode = sf::VideoMode::getDesktopMode();
     sf::RenderWindow window(sf::VideoMode(clientVideoMode.width/1.5, clientVideoMode.height/1.5, 32), "Utilitaires");
@@ -35,7 +35,7 @@ int main() {
                     std::cout << "The window's size was modified. The width size is now " << event.size.width << " and the height size is now " << event.size.height << "." << std::endl;
                     break;
                 case sf::Event::LostFocus:
-                    gameSystem.pause(window, event, grey);
+                    system.pause(window, event, grey);
                     break;
                 case sf::Event::TextEntered:
                     std::cout << "A character was entered : " << static_cast<char>(event.text.unicode) << std::endl;
@@ -43,7 +43,7 @@ int main() {
                 case sf::Event::KeyPressed:
                     switch(event.key.code) {
                         case sf::Keyboard::Escape:
-                            gameSystem.pause(window, event, grey);
+                            system.pause(window, event, grey);
                             break;
                     }
             }
@@ -54,7 +54,7 @@ int main() {
         window.draw(button.getText());
         window.display();
 
-        int fps; gameSystem.calculateFPS(&fps);
+        int fps; system.calculateFPS(&fps);
 
         if (fps == 0) {} else {
             std::cout << fps << " FPS." << std::endl;
